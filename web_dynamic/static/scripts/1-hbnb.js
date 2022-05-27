@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    var amenities = {};
+    let amenities = {};
     $('input[type=checkbox]').change(function(){
-        var id = $(this).attr('id');
+        let id = $(this).attr('data-id');
         if($(this).is(':checked')){
             amenities[id] = id;
         }
@@ -10,4 +10,4 @@ $(document).ready(function(){
         }
         $('#amenities h4').text(Object.keys(amenities).join(', '));
     });
-}
+});
