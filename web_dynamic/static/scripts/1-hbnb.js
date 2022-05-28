@@ -4,10 +4,10 @@ $(document).ready(function(){
         let id = $(this).attr('data-id');
         if($(this).is(':checked')){
             amenities[id] = id;
+            $('.amenities h4').append(Object.keys(amenities).join(', '));   
         }
         else{
-            delete amenities[id];
+            $('.amenities h4').empty().remove(Object.keys(amenities));
         }
-        $('#amenities h4').text(Object.keys(amenities).join(', '));
     });
 });
